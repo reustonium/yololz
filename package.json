@@ -4,7 +4,12 @@
   "description": "light-weight webapp to make sharing linkz with your pals wicked easy",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.10.7"
+    "express": "^4.10.7",
+    "morgan": "~1.3.0",
+    "compression": "~1.0.11",
+    "body-parser": "~1.8.0",
+    "method-override": "~2.2.0",
+    "ejs":"~1.0.0"
   },
   "devDependencies": {},
   "keywords": [
