@@ -6,12 +6,7 @@ var userSchema = new mongoose.Schema({
   email: { type: String, unique: true, lowercase: true },
   password: String,
 
-  facebook: String,
-  twitter: String,
   google: String,
-  github: String,
-  instagram: String,
-  linkedin: String,
   tokens: Array,
 
   profile: {
@@ -29,7 +24,6 @@ var userSchema = new mongoose.Schema({
 /**
  * Password hashing Mongoose middleware.
  */
-
 userSchema.pre('save', function(next) {
   var user = this;
 
@@ -49,7 +43,6 @@ userSchema.pre('save', function(next) {
 /**
  * Helper method for validationg user's password.
  */
-
 userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) { return cb(err); }
@@ -60,7 +53,6 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
 /**
  * Helper method for getting user's gravatar.
  */
-
 userSchema.methods.gravatar = function(size) {
   if (!size) { size = 200; }
 
